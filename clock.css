@@ -1,0 +1,92 @@
+*
+{
+    margin: 0;
+    padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+} 
+.main_container
+{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#08001f,#30197d);  
+    position: relative;  
+}
+
+.container
+{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 800px;
+    
+    transform: translate(-50%,-50%);
+}
+
+.clock
+{
+    width: 100%;
+    height: 100%;
+    background: rgba(240,0,199,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);   
+}
+.container::before
+{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #f41b75;
+    border-radius: 5px;
+    position: absolute;
+    left: -50px;
+    top: -100px;
+    
+}
+.container::after
+{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #419aff;
+    border-radius: 50%;
+    position: absolute;
+    right: -50px;
+    bottom: -100px;
+    z-index: -1;
+}
+.clock span
+{
+    width: 110px;
+    font-size: 60px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.clock span::after
+{
+    font-size: 18px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*to use after content explictially dont use content in parent as above is parent of below*/
+.h::after
+{
+    content: 'HOURS';
+}
+
+.min::after
+{
+    content: 'MINUTEs';
+}
+.sec::after
+{
+    content: 'SECONDS';
+}
