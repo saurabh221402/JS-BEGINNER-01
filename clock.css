@@ -1,4 +1,4 @@
-*
+ *
 {
     margin: 0;
     padding:0;
@@ -10,6 +10,7 @@
     display: flex;
     width: 100%;
     min-height: 100vh;
+    min-width: 250px;
     background: linear-gradient(45deg,#08001f,#30197d);  
     position: relative;  
 }
@@ -19,9 +20,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 180px;
-    width: 800px;
     
+    height: 15vw;
+    width: 60vw;
+    min-width: 250px;
     transform: translate(-50%,-50%);
 }
 
@@ -39,29 +41,30 @@
 .container::before
 {
     content: '';
-    width: 180px;
-    height: 180px;
+    width: 15vw;
+    height: 15vw;
     background: #f41b75;
     border-radius: 5px;
     position: absolute;
-    left: -50px;
-    top: -100px;
+    left: -10%;
+    top: -50%;
     
 }
 .container::after
 {
     content: '';
-    width: 180px;
-    height: 180px;
+    width: 14vw;
+    height: 14vw;
     background: #419aff;
     border-radius: 50%;
     position: absolute;
-    right: -50px;
-    bottom: -100px;
+    right: -10%;
+    bottom: -40%;
     z-index: -1;
 }
 .clock span
 {
+    min-width: 40px;
     width: 110px;
     font-size: 60px;
     position: relative;
@@ -90,3 +93,14 @@
 {
     content: 'SECONDS';
 }
+
+@media screen and (max-width: 601px) {
+    .clock span{
+      font-size: 30px;
+    }
+    .clock span::after{
+        font-size: 10px;
+    }
+  }
+  
+ 
